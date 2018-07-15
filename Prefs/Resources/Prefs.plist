@@ -80,6 +80,16 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
+			<string>@Fr0mDerik (Twitter)</string>
+			<key>subtitle</key>
+			<string>designer, developer of Modern for iOS 10</string>
+			<key>url</key>
+			<string>https://twitter.com/Fr0mDerik</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
 			<string>Github</string>
 			<key>subtitle</key>
 			<string>Source code</string>
