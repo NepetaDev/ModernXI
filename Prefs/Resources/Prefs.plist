@@ -29,7 +29,7 @@
 			<key>defaults</key>
 			<string>io.ominousness.modernxi</string>
 			<key>label</key>
-			<string>Enabled</string>
+			<string>ENABLE</string>
 			<key>key</key>
 			<string>Enabled</string>
 			<key>alternateColors</key>
@@ -51,7 +51,7 @@
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Respring</string>
+			<string>RESPRING</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -63,16 +63,16 @@
 			<key>confirmation</key>
 			<dict>
 				<key>prompt</key>
-				<string>Are you sure you want to reset all your preferences? This cannot be undone.</string>
+				<string>ARE_YOU_SURE_TO_RESET_PREFS</string>
 				<key>title</key>
 				<string>OK</string>
 				<key>okTitle</key>
 				<string>OK</string>
 				<key>cancelTitle</key>
-				<string>Cancel</string>
+				<string>CANCEL</string>
 			</dict>
 			<key>label</key>
-			<string>Restore default settings and respring</string>
+			<string>RESET_PREFS</string>
 		</dict>
 
 
@@ -80,9 +80,9 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>@Fr0mDerik (Twitter)</string>
+			<string>FROMDERIK_TWITTER</string>
 			<key>subtitle</key>
-			<string>designer, developer of Modern for iOS 10</string>
+			<string>FROMDERIK_SUBTITLE</string>
 			<key>url</key>
 			<string>https://twitter.com/Fr0mDerik</string>
 		</dict>
@@ -90,9 +90,9 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>Github</string>
+			<string>GITHUB</string>
 			<key>subtitle</key>
-			<string>Source code</string>
+			<string>SOURCE_CODE</string>
 			<key>url</key>
 			<string>https://github.com/Ominousness/ModernXI</string>
 		</dict>
@@ -100,9 +100,9 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>Donate to Ominousness</string>
+			<string>DONATE_TO_OMINOUSNESS</string>
 			<key>subtitle</key>
-			<string>Support me!</string>
+			<string>SUPPORT_ME</string>
 			<key>url</key>
 			<string>https://ominous.cf/donate</string>
 		</dict>
