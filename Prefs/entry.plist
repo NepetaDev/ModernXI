@@ -5,5 +5,6 @@
 	detail = MXIPrefsListController;
 	isController = 1;
 	label = ModernXI;
+	icon = icon.png;
     };
 }
