@@ -45,6 +45,9 @@
     %orig;
 
     for (UIView *subview in self.subviews) {
+		if([subview isKindOfClass:%c(UIImageView)]) {
+			subview.hidden = YES;
+		}
         if ([NSStringFromClass([subview class]) isEqualToString:@"MTMaterialView"]) {
             [self moveUpBy:-27 view:subview];
         }
