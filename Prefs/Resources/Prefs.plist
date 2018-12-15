@@ -35,6 +35,20 @@
 			<key>alternateColors</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>io.ominousness.modernxi</string>
+			<key>label</key>
+			<string>ENABLED_BANNERS</string>
+			<key>key</key>
+			<string>EnabledBanners</string>
+			<key>alternateColors</key>
+			<true/>
+		</dict>
 
 		<!-- Credits -->
 		<dict>

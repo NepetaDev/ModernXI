@@ -208,6 +208,7 @@
 @property (copy,readonly) NSString* debugDescription; 
 @property (assign,nonatomic) bool adjustsFontForContentSizeCategory;                                                          //@synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory - In the implementation block
 @property (nonatomic,copy) NSString* preferredContentSizeCategory;                                                            //@synthesize preferredContentSizeCategory=_preferredContentSizeCategory - In the implementation block
+@property (assign,nonatomic) bool mxiIsActive;
 -(id)init;
 -(void)layoutSubviews;
 -(void)dealloc;
