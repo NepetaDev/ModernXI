@@ -4,6 +4,6 @@ Depends: mobilesubstrate, ws.hbang.common (>= 1.11)
 Version: 0.1.1
 Architecture: iphoneos-arm
 Description: A tweak that does something weird to notifications.
-Maintainer: Ominousness
-Author: Ominousness
+Maintainer: Nepeta
+Author: Nepeta
 Section: Tweaks
