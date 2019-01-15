@@ -2,6 +2,8 @@
 #import <UIKit/UIKit.h>
 #import <UIKit/UIControl.h>
 #import <Cephei/HBPreferences.h>
+#import <BulletinBoard/BBBulletin.h>
+#import <AppList/AppList.h>
 
 @interface _UIBackdropView : UIView {
 	int  _style;
@@ -590,4 +592,20 @@
 @end
 
 @interface BSUIRelativeDateLabel : UILabel
+@end
+
+@interface NCNotificationRequest : NSObject
+
+@property (nonatomic,copy,readonly) BBBulletin* bulletin;
+
+@end
+
+@interface NCNotificationViewController : UIViewController
+
+@property (nonatomic,retain) NCNotificationRequest* notificationRequest;
+
+@end
+
+@interface NCNotificationShortLookViewController : NCNotificationViewController
+
 @end

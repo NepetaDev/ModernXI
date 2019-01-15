@@ -24,18 +24,35 @@ static bool enabledBanners = true;
 }
 %end
 
+@interface UIImage (UIApplicationIconPrivate)
++ (id)_iconForResourceProxy:(id)arg1 format:(int)arg2;
++ (id)_iconForResourceProxy:(id)arg1 variant:(int)arg2 variantsScale:(float)arg3;
++ (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(int)arg3 scale:(float)arg4;
++ (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(int)arg3;
++ (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(float)arg3;
++ (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2;
++ (int)_iconVariantForUIApplicationIconFormat:(int)arg1 scale:(float *)arg2;
+- (id)_applicationIconImageForFormat:(int)arg1 precomposed:(BOOL)arg2 scale:(float)arg3;
+- (id)_applicationIconImageForFormat:(int)arg1 precomposed:(BOOL)arg2;
+@end
+
 %hook NCNotificationShortLookView
 
 -(void)layoutSubviews{
     %orig;
     if (!enabled) return;
 
+    UIViewController *controller = nil;
+    if (self.nextResponder.nextResponder.nextResponder) {
+        controller = (UIViewController*)self.nextResponder.nextResponder.nextResponder;
+    }
+        
+        
     if (!enabledBanners) {
         bool inBanner = FALSE;
-        if (!self.nextResponder.nextResponder.nextResponder) {
+        if (!controller) {
             return;
         }
-        UIViewController *controller = (UIViewController*)self.nextResponder.nextResponder.nextResponder;
         
         if (!controller.nextResponder || !controller.nextResponder.nextResponder || ![NSStringFromClass([controller.nextResponder.nextResponder class]) isEqualToString:@"NCNotificationListCell"]) {
             inBanner = TRUE; //probably, but it's a safe assumption
@@ -66,6 +83,16 @@ static bool enabledBanners = true;
     iconButton.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
     iconButton.layer.shadowOpacity = 0.5f;
     iconButton.layer.masksToBounds = NO;
+
+    if (controller && ((NCNotificationShortLookViewController *)controller).notificationRequest) {
+        NCNotificationRequest *req = ((NCNotificationShortLookViewController *)controller).notificationRequest;
+        if (req.bulletin && req.bulletin.sectionID) {
+            UIImage *icon = [[ALApplicationList sharedApplicationList] iconOfSize:ALApplicationIconSizeLarge forDisplayIdentifier:req.bulletin.sectionID];
+            if (icon) {
+                [iconButton setImage:icon forState:UIControlStateNormal];
+            }
+        }
+    }
 
     [headerContentView.titleLabel setTextColor:[UIColor whiteColor]];
     headerContentView.titleLabel.frame = CGRectMake(headerContentView.titleLabel.frame.origin.x + 5, headerContentView.titleLabel.frame.origin.y, headerContentView.titleLabel.frame.size.width - 5, headerContentView.titleLabel.frame.size.height);
